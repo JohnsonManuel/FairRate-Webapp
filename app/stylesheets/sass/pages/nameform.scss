@@ -1,0 +1,25 @@
+.nameform{
+  padding:0px 10rem;
+  margin: 80px 0px;
+  text-align: center;
+}
+.nameform__input-form{
+  text-align: center;
+  margin-top:50px;
+  font-size: 0;
+  &__text-input{
+    padding:10px;
+    border:1px solid $light-blue-grey;
+    width:calc(50% - 40px);
+    margin-right: 20px;
+    margin-bottom: 1em;
+    border-radius: 3px;
+    outline:none;
+    &:nth-child(2n){
+      margin-right:0;
+    }
+    &::placeholder {
+      color:$placeholder;
+    }
+  }
+}
