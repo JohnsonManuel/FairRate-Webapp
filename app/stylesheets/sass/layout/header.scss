@@ -1,0 +1,21 @@
+.page-header{
+  padding:12px 20px 12px 20px ;
+  box-shadow: 0 1px 0 0 $paleBlue;
+  &__logo{
+    margin-left:2.5rem;
+  }
+  &__right{
+    float:right;
+    nav{
+      display: inline-block;
+      margin-right: 3rem;
+      a{
+        margin-right:2.5rem;
+        line-height: 40px;
+          &:last-child{
+            margin-right:0;
+          }
+        }
+    }
+  }
+}

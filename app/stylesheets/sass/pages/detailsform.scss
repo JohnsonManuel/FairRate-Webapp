@@ -1,0 +1,117 @@
+.detailsform{
+  padding: 0px 10px;
+  margin: 80px 0px;
+  &::after{
+    @include clearfix();
+  }
+}
+.main-section-col{
+  width:50%;
+  float:left;
+  .detailsform-main-heading{
+    padding-right:5em;
+    margin-bottom:1em;
+  }
+  .detailsform-main-description{
+    padding-right:5em;
+    margin-bottom:4em;
+  }
+}
+
+.main-section-col{
+  padding:0px 20px;
+}
+
+
+.detailsform__input-form{
+  .input-label{
+    margin-bottom: 5px;
+  }
+  .detailsform__input-form__input-date
+  {
+    font-family: inherit;
+    margin-top:8px;
+    &::-webkit-clear-button {
+      display: none;
+    }
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      margin-left:10px;
+    }
+      &::before{
+        content: '';
+        @include size(24px); //@ size(width, height)
+        @include centerer(false,true);  //@centerer("horisontal,vertical")
+        left: 10px;
+        background: url(https://cdn.zeplin.io/59de1f633fed7a7ec333d574/assets/360A2C79-F1A2-48EE-A2FD-07416D351104.svg);
+      }
+  }
+}
+.form-extend{
+  max-width: 90%;
+  margin-left: auto;
+  list-style: none;
+  &>li{
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  .detailsform-input-location{
+    &::before{
+      content:'';
+      @include centerer(false,true); //@centerer("horisontal,vertical");
+      left: 10px;
+      width: 24px;
+      height: 24px;
+      z-index: 1;
+      background: url(https://cdn.zeplin.io/59de1f633fed7a7ec333d574/assets/BA3123DD-D1C8-4429-B1F9-F51AF068B391.svg);
+    }
+  }
+  .detailsform-input-mail{
+    &::before{
+      content:'';
+      @include centerer(false,true); //@centerer("horisontal,vertical");
+      left: 10px;
+      @include size(24px);
+      z-index: 1;
+      background: url(https://cdn.zeplin.io/59de1f633fed7a7ec333d574/assets/360A2C79-F1A2-48EE-A2FD-07416D351104.svg);
+    }
+  }
+  .item-selector{
+    width:100%;
+    padding:15px 10px;
+    cursor: pointer;
+  }
+}
+
+.box-item-wrapper{
+  margin-top: 10em;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: bottom;
+  .box-check-item{
+    width : calc(50% - 10px);
+    border-radius: 3px;
+    font-size: 1rem;
+    text-align: center;
+    padding:1rem;
+    background-color:white;
+    .box-check-img{
+      @include size(48px);
+      margin:2rem 0 3rem 0;
+    }
+  }
+}
+.box-check-item{
+  border: 2px solid #c4cdd5 ;
+
+}
+
+.action-buttons{
+  display: flex;
+  justify-content: space-between;
+  padding:30px 0px;
+  .disable{
+    background-color: $light-blue-grey;
+  }
+}

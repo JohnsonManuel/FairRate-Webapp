@@ -1,0 +1,57 @@
+footer{
+  padding:3em 0 6em 0;
+  background-color: $pale-grey-blue;
+}
+.footer-container{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding:0 2em;
+  &__top{
+    @include flexbox;
+
+    justify-content: space-between;
+
+    .footer-col{
+      padding:0px 10px;
+      vertical-align: top;
+      .logo{
+        margin-bottom: 20px;
+      }
+      .icons{
+        margin-top:18px;
+        font-size: 0;
+        a{
+          display: inline-block;
+          margin-right:20px;
+        }
+      }
+      p{
+        margin-bottom:12px;
+      }
+      h6{
+        margin-bottom: 16px;
+      }
+      .contact{
+        margin-top:12px;
+        &::before{
+          font-family:"Font Awesome 5 Free Brands", "Font Awesome 5 Free Solid", "Font Awesome 5 Free" !important;
+          content: '\f879';
+          color: #919eab;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right:1rem;
+          font-weight: 900;
+        }
+      }
+      &:first-child{
+        // margin-right: 4em;
+      }
+      &:last-child{
+        width:30%;
+      }
+    }
+  }
+  &__bottom{
+    margin-top:3em;
+  }
+}

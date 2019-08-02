@@ -1,0 +1,19 @@
+.page-link{
+  color:$accent;
+  cursor:pointer;
+  text-decoration: none;
+}
+.underline{
+  text-decoration: underline;
+}
+.navigation-link{
+  text-decoration: none;
+  cursor:pointer;
+  color: $bluey-grey;
+  &:hover{
+    color:$dark;
+  }
+  &--active{
+    color:$dark;
+  }
+}

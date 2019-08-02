@@ -1,0 +1,20 @@
+
+
+.form-button{
+  margin-top:20px;
+  padding:15px 73px;
+  background-color: $accent;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  outline:none;
+  cursor:pointer;
+  &:hover{
+    background-color: #2cd6ff;
+  }
+}
+
+.account-button{
+  padding:10px 20px;
+  text-decoration: none;
+}

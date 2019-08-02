@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/189c5b645e.js"></script>
+    <link rel='stylesheet' id='fontawesome-css' href='https://use.fontawesome.com/releases/v5.9.0/css/all.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="stylesheets/css/style.css">
+    <title>Fair-rate</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <div id="hamburger"class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div><img class="page-header__logo logo" src="images/logo/logo@3x.png" alt="Companylogo">
+      <div class="page-header__right">
+        <nav class="header__nav">
+          <a class="navigation-link " href="#">Home</a>
+          <a class="navigation-link navigation-link--active" href="#">Applications</a>
+          <a class="navigation-link" href="#">Documents</a>
+        </nav><div class="profile">
+          <i class="far fa-bell profile__notification" ></i>
+          <img class="profile__thumbnail" src="images/profile-logo/profile-logo@3x.png" alt="profile-logo">
+          <span class="profile__name">Adri an Manea</span>
+          <div class="popup hide">
+            <div class="popup__image-block">
+              <span class="change-photo"><img src="images/profile-logo/profile-logo@3x.png" alt=""></span>
+            </div>
+            <div class="popup__profiledetail-block">
+              <ul>
+                <li>Adrian Manea</li>
+                <li>Adreanmanea @gmail.com</li>
+                <li> <button type="button" name="button" class="popup__account-btn">My Account</button> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+        <ul class="sideNav">
+          <li><img class="sideNav__image"src="images/logo/logo@3x.png" alt=""></li>
+          <li class="sideNav__item"><a href="#">Home</a></li>
+          <li class="sideNav__item"><a href="#">Applications</a></li>
+          <li class="sideNav__item"><a href="#">Documents</a></li>
+        </ul>
+        <div class="body-overlay"> </div>
+    </header>
+    <div class="docMainWrapper">
+      <div class="docMainContainer">
+        <section class="nameform">
+          <h1 class=" main-heading">I'll get you an awesome price in seconds. Ready to go?</h1>
+          <form class="nameform__input-form" action="detailsform.html" method="get">
+            <input class="nameform__input-form__text-input" type="text" name="firstName" placeholder="First Name">
+            <input class="nameform__input-form__text-input" type="text" name="lastName" placeholder="Last Name">
+          </form>
+          <input class="form-button" onClick="GotoNextPage(this)" type="button" name="Next" value="Next">
+        </section>
+        <section class="detailsform hide">
+          <div class="main-section-col">
+            <h1 class=" detailsform-main-heading main-heading">Fill the form on the right</h1>
+            <p class="detailsform-main-description main-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <form id="personaldetails"class="detailsform__input-form" action="documentform.html" method="get">
+              <label class="input-label" for="dateofbirth">DATE OF BIRTH</label>
+              <input class="input-field detailsform__input-form__input-date" type="date" name="dateofbirth" id="dateofbirth" max ="2019-07-22" dateformat="dd/mm/yyyy" value="2018-08-21">
+            </form>
+          </div>
+          <div class="main-section-col">
+            <ul class="form-extend">
+              <li class="detailsform-input-location">
+                <input form="personaldetails" class="input-field " type="text" name="location" placeholder="Enter the exact address">
+              </li>
+              <li class="detailsform-input-mail">
+                <input  form="personaldetails" class="input-field " type="text" name="mail" placeholder="Email Address">
+              </li>
+              <li><!-- checklist -->
+                <ul class="checklist">
+                  <li class="checklist__option option-checked">
+                    <span class="checklist__checkbox "></span>
+                    <span class="checklist__item">Condo</span>
+                  </li>
+                  <li class="checklist__option">
+                    <span class="checklist__checkbox "></span>
+                    <span class="checklist__item">Co-op</span>
+                  </li>
+                  <li class="checklist__option">
+                    <span class="checklist__checkbox "></span>
+                    <span class="checklist__item">House</span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <select form="personaldetails" class="item-selector input-field" value="This-month">
+                  <option value="none">Select an Option</option>
+                  <option value="This-month">This month</option>
+                  <option value="Next-Month">Next Month</option>
+                  <option value="December-2018">December 2018</option>
+                  <option value="January-2019">January 2019</option>
+                  <option value="I-dont-know">I don't know</option>
+                </select>
+              </li>
+            </ul>
+            <div class="box-item-wrapper">
+              <div class="box-check-item option-checked">
+                <img class="box-check-img" src="images/box-image/criminal.svg" alt="">
+                <div>
+                  <span class="checklist__checkbox"></span><span class="checklist__item">Burglar Alarm</span>
+                </div>
+              </div>
+              <div class="box-check-item">
+                <img class="box-check-img" src="images/box-image/fire.svg" alt="">
+                <div>
+                  <span class="checklist__checkbox"></span><span class="checklist__item">Burglar Alarm</span>
+                </div>
+              </div>
+            </div>
+            <!-- Action buttons -->
+            <div class="action-buttons">
+              <button type="button" class="form-button disable" name="Back" onClick="GotoPrevPage(this)">Back</button>
+              <button type="button" class="form-button" name="Next" onClick="GotoNextPage(this)">Next</button>
+            </div>
+          </div>
+        </section>
+        <section class="documentform hide">
+          <h1 class="main-heading">Few more step ahead upload your ID Document 👆</h1>
+          <div class="tabs-container">
+            <!--tabs-->
+            <p class="tab tab-selected"> <span>Photo Indentification</span> </p>
+            <p class="tab"><span>Proof of Address</span></p>
+          </div>
+          <!-- Drag n Drop -->
+          <div class="dragndrop dragndropContainer">
+            <h3 class="dragndrop__title">Upload photo Indentification</h3>
+            <div class="dragndrop-main">
+              <!--dropzone -->
+              <div id="#drop_zone" ondrop="event.preventDefault();drop(event);" ondragenter="event.preventDefault();" class="dragndrop-main__dropzone">
+                <img class="dropzone__image" src="images/upload-icon/upload-icon.png" alt="">
+                <p class="dropzone__instruction">Drag files here to upload or <input class="hide" type="file" id="upload" name="upload"/><a href="" class="page-link underline"onclick="document.getElementById('upload').click(); return false">Select a file</a>from your device</p>
+                <p class="dropzone__file-description disabled">JPG, PNG or PDF only, maximum file size - 5MB</p>
+              </div>
+              <div class="dragndrop-main__dropzonedescription">
+                <p>Your document bust be:</p>
+                <ul class="filesreqired-list">
+                  <li>A Governent issued
+                    <ul class="filerequired-list--nest">
+                      <li>Passport</li>
+                      <li>Driver License</li>
+                      <li>National ID Card</li>
+                    </ul>
+                  </li>
+                  <li>Whitthin it's expiry date</li>
+                </ul>
+                <p class="link"> <a href="#" class="page-link underline">See an example image</a></p>
+              </div>
+            </div>
+            <!-- live list-->
+            <ul id="liveFileUpload" class="dragndrop__liveFileUpload">
+              <li class="liveFileUpload__file hide">
+                <img class="liveFileUpload__file-image"src="images/file-type-icon/type-pdf.svg" alt="">
+                <span class="liveFileUpload__file-name">MY ID.PDF</span>
+                <span class="liveFileUpload__file-type">PDF</span>
+                <span class="liveFileUpload__file-size">1MBs</span>
+                <span class="liveFileUpload__file-state">UPLOADED</span>
+                <img  class="liveFileUpload__file-delete" src="images/trashcan/trashcan.png" alt="">
+              </li>
+              <li class="liveFileUpload__file">
+                <img class="liveFileUpload__file-image"src="images/file-type-icon/type-pdf.svg" alt="">
+                <span class="liveFileUpload__file-name">MY ID.PDF</span>
+                <span class="liveFileUpload__file-type">PDF</span>
+                <span class="liveFileUpload__file-size">1MBs</span>
+                <span class="liveFileUpload__file-state">UPLOADED</span>
+                <img  class="liveFileUpload__file-delete" src="images/trashcan/trashcan.png" alt="">
+              </li>
+              <li class="liveFileUpload__file">
+                <img class="liveFileUpload__file-image"src="images/file-type-icon/type-image.svg" alt="">
+                <span class="liveFileUpload__file-name">IMG1231.JPG</span>
+                <span class="liveFileUpload__file-type">JPG</span>
+                <span class="liveFileUpload__file-size">1MBs</span>
+                <span class="liveFileUpload__file-state">UPLOADED</span>
+                <img  class="liveFileUpload__file-delete" src="images/trashcan/trashcan.png" alt="">
+              </li>
+            </ul>
+          </div>
+          <!-- Action buttons-->
+          <div class="action-buttons">
+              <button type="submit"  class="form-button disable"name="Back" onClick="GotoPrevPage(this)" >Back</button>
+              <button type="button"  class="form-button" name="Next">Next</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="page-footer">
+      <div class="footer-container">
+        <div class="footer-container__top">
+          <div class="footer-col">
+            <p>Schedule a conversation <br /> <a class="page-link" href="mailto:hello@fairrate.com" >hello@fairrate.com</a></p>
+            <ul>
+              <li>
+                <a href="#">
+                  <span class="contact">+62 202 555 0117</span>
+                </a>
+              </li>
+              <li class="icons">
+                <a href="#">
+                  <img src="https://cdn.zeplin.io/59de1f633fed7a7ec333d574/assets/5789A934-6A63-4161-88F4-55E9D4D32A58.svg" alt="">
+                </a>
+                <a href="#">
+                  <img src="https://cdn.zeplin.io/59de1f633fed7a7ec333d574/assets/8C943951-8F03-43A0-BFC5-01B6D8B7D4FB.svg" alt="">
+                </a>
+                <a href="#">
+                  <img src="https://cdn.zeplin.io/59de1f633fed7a7ec333d574/assets/B6C6867A-D928-49A2-A8F3-B90E9E24A0D0.svg" alt="">
+                </a>
+                </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6 class="footer-heading">COMPANY</h6>
+            <ul class="footer-subheadings">
+              <li>
+                <a href="#">Resources</a>
+              </li>
+              <li>
+                <a href="#">Careers</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h6 class="footer-heading">LEGAL</h6>
+            <ul class="footer-subheadings">
+              <li>
+                <a href="#">NMLS Consumer Access</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">Terms of Use</a>
+              </li>
+              <li>
+                <a href="#">Disclosures & Licensing</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <a href="#">
+              <img class="logo" src="images/logo/logo@3x.png" alt="Companylogo">
+            </a>
+            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Praesent commodo cursus magna.</p>
+          </div>
+        </div>
+        <div class="footer-container__bottom">
+          <p class="copyright bottom-copyright">© 2018 Deivas.io, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

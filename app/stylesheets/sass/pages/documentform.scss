@@ -1,0 +1,144 @@
+.documentform{
+  padding:0px 10px;
+  margin: 80px auto;
+  max-width: 80%;
+}
+.hide{
+  display: none;
+}
+
+.tabs-container{
+  text-align: center;
+  border: 1px solid $paleBlue;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 4em;
+  &::after{
+    @include clearfix();
+  }
+  .tab{
+    color: $dark;
+    width: 50%;
+    float: left;
+    padding: 20px 10px;
+    background-color: white;
+  }
+  .tab-selected{
+    color:white;
+    background-color: $tab-active;
+  }
+}
+
+.dragndrop{
+  background-color: white;
+  margin-top: 2em;
+  display: inline-block;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
+  //try the border and padding solution
+  &__title{
+    padding: 20px 10px;
+    border-bottom: 1px solid $paleBlue;
+  }
+  &-main{
+    padding:20px;
+    &::after{
+      @include clearfix();
+    }
+    &__dropzone{
+      width:60%;
+      float: left;
+      text-align: center;
+      position: relative;
+      padding:10px;
+      border: 2px dashed $light-blue-grey;
+      border-radius: 3px;
+      background-color: $primary-background;
+      .dropzone__image{
+        @include size(80px);
+        margin: 30px 0px;
+        text-align: center;
+      }
+      .dropzone__instruction{
+
+        padding: 0px 5rem;
+        margin-top: 1em;
+        margin-bottom: 5em;
+      }
+      .dropzone__file-description{
+        position: absolute;
+        padding: 10px;
+        bottom: 0;
+        left:0;
+        right: 0;
+
+      }
+      &::after{
+        @include clearfix();
+      }
+
+    }
+    &__dropzonedescription{
+      width: 40%;
+      float:right;
+      padding:20px;
+      .filesreqired-list{
+        list-style:disc;
+        line-height: 2;
+        padding-left: 2em;
+        margin:1em 0  4em 0;
+        .filerequired-list--nest{
+          padding-left: 2em;
+          list-style: disc;
+        }
+      }
+      &::after{
+        @include clearfix();
+      }
+    }
+  }
+}
+
+.dragndrop__liveFileUpload{
+  @include ulreset();
+  padding:0px 20px;
+  margin: 30px 0px;
+  background-color: #fafafa;
+  border: 1px  solid rgba(0,0,0,0.12);
+  border-width: 1px 0 1px 0;
+
+  .liveFileUpload__file{
+    &.hide{
+     display: none;
+   }
+    @include flexbox();
+    justify-content: space-between;
+    padding:20px 0px;
+    border-bottom: 1px solid #d8d8d8;
+    &-image{
+      width: 10%;
+      @include size(1rem);
+    }
+    &-name{
+      width: 20%;
+    }
+    &-type{
+      width:10%;
+    }
+    &-size{
+      width:20%;
+    }
+    &-state{
+      width:30%;
+    }
+    &-delete{
+      width:10%;
+      @include size(1rem);
+      cursor: pointer;
+    }
+    &:last-child{
+      border-bottom: transparent;
+    }
+  }
+}

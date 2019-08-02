@@ -1,0 +1,70 @@
+.popup{
+  min-width:500px;
+  height: 250px;
+  position: absolute;
+  right: -10px;
+  padding:30px;
+  text-align: center;
+  z-index: 2;
+  border-radius: 10px;
+  background-color:$accent;
+
+  &__image-block{
+    width:30%;
+    float:left;
+    position: relative;
+    height: 100%;
+    border-right: 1.5px solid white;
+    img{
+      @include size(100px);
+      @include centerer(true,true);
+      border-radius: 50%;
+    }
+  }
+  &__profiledetail-block{
+    width:70%;
+    position: relative;
+    height: 100%;
+    float: right;
+    padding:10px;
+    font-size: 15px;
+    ul{
+      color: white;
+      @include ulreset();
+      @include centerer(true,true);
+      width: 100%;
+      li{
+        display: block;
+        margin-top: 30px;
+        width: 100%;
+      }
+      &:last-child{
+        margin-bottom:0;
+      }
+    }
+  }
+
+  &__account-btn{
+    border:none;
+    outline:none;
+    color:$accent;
+    padding:10px 30px;
+    background-color: $primary-background;
+    border-radius:5px;
+    cursor:pointer;
+  }
+  &::before{
+    content: '';
+    top:0;
+    right:0;
+    position: absolute;
+    border-width: 8px;
+    border-style: solid;
+    border-color:  transparent transparent $accent transparent;
+    transform: translate(-50%,-100%);
+  }
+  &::after{
+    @include clearfix();
+
+  }
+}
