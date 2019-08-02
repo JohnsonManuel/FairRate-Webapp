@@ -81,6 +81,8 @@ body{
   color: $battleship-grey;
   .liveFileUpload__file-name{
     font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 .disabled{

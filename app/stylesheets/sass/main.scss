@@ -15,6 +15,8 @@
 @import 'components/popup';
 @import 'components/sideNav';
 @import 'components/checklist';
+@import 'components/dropdownlist';
+
 
 //layout
 @import 'layout/container';
@@ -25,4 +27,4 @@
 //pages
 @import 'pages/detailsform.scss';
 @import 'pages/documentform.scss';
-@import 'pages/index.scss';
+@import 'pages/nameform.scss';

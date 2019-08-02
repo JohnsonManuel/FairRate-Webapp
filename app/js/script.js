@@ -1,51 +1,27 @@
-var checklistOptions = document.querySelectorAll('.checklist__option');
-var boxCheck = document.querySelectorAll('.box-check-item');
-var liveList= document.querySelector('.dragndrop__liveFileUpload');
-var child= liveList.childNodes;
-var footer= document.querySelector(".page-footer");
-var profilePopup = document.querySelector('.profile__name');
-var popup= document.querySelector('.popup');
-var sideNav= document.querySelector('.sideNav');
-var pages= document.querySelector('.docMainContainer').children;
-var dt;
-var files;
-addDFileDeleteAction();
+var checklistOptions = document.querySelectorAll('.checklist__option'),
+liveList= document.querySelector('.dragndrop__liveFileUpload'),
+popup= document.querySelector('.popup'),
+sideNav= document.querySelector('.sideNav'),
+pages= document.querySelector('.docMainContainer').children;
 
-//hamburger-toggle
-document.getElementById('hamburger').addEventListener('click',function(){
-sideNav.classList.toggle('expand');
-document.querySelector('.body-overlay').classList.toggle('expand');
-document.querySelector('.body-overlay').addEventListener('click',function(){
-  sideNav.classList.remove('expand');
-  this.classList.remove('expand');
-});
+//Event-listeners add
+document.getElementById('hamburger').addEventListener('click',hamburgerHandler);
+document.querySelector('.dropdown').addEventListener('click',listselect);
+document.querySelector('.profile__name').addEventListener('click',() => {popup.classList.toggle('hide');});
+
+//dropdown listener add
+document.querySelector('.dropdown_list').addEventListener("click",(e)=> {
+  if(e.target.matches('.dropdown_list__item')){
+    document.querySelector('.list_activeitem').innerHTML=e.target.innerHTML;
+  }
 });
 
-//page-shift
-function GotoNextPage(curr){
-for(let i=0;i<pages.length;i++)
-{
-  if(pages[i].contains(curr))
-  {
-    pages[i].classList.add('hide');
-    pages[i+1].classList.remove('hide');
-  }
-}
-}
-function GotoPrevPage(curr){
-for(let i=0;i<pages.length;i++)
-{
-  if(pages[i].contains(curr))
-  {
-    pages[i].classList.add('hide');
-    pages[i-1].classList.remove('hide');
-  }
-}
-}
-
-//profile-section-Popup
-profilePopup.addEventListener('click',function(){
-popup.classList.toggle('hide');
+//boxCheck item listener add
+document.querySelector('.box-item-wrapper').addEventListener('click',(e)=>{
+   if(e.target.matches('.checklist__checkbox')){
+      e.target.parentElement.parentElement.classList.toggle('option-checked');
+      console.log(e.target);
+    }
 });
 
 //checklist-listeners
@@ -55,45 +31,82 @@ for(let i=0;i<checklistOptions.length;i++)
     this.classList.toggle('option-checked');
   });
 }
-for(let i=0;i<boxCheck.length;i++)
-{
-  boxCheck[i].addEventListener('click',function(){
-    this.classList.toggle('option-checked');
+
+function hamburgerHandler(){
+  sideNav.classList.toggle('expand');
+  let overlay = document.querySelector('.body-overlay');
+  overlay.classList.toggle('expand');
+  overlay.addEventListener('click',function(){
+    sideNav.classList.remove('expand');
+    this.classList.remove('expand');
   });
 }
 
-//dragand drop file delete aciton
-function addDFileDeleteAction(){
-  var deleteFIleButton= liveList.querySelectorAll('.liveFileUpload__file-delete');
-  for(let i=0;i<deleteFIleButton.length;i++)
+function listselect(){
+  let activeItem= this.querySelector('.dropdown_list-container');
+  activeItem.classList.toggle('dropdown-active');
+}
+
+
+//page-shift
+function GotoNextPage(curr){
+  for(let i=0;i<pages.length;i++)
   {
-      deleteFIleButton[i].addEventListener('click', function(){
-      liveList.removeChild(this.parentNode);
-      });
+    if(pages[i].contains(curr))
+    {
+      pages[i].classList.add('hide');
+      pages[i+1].classList.remove('hide');
+    }
   }
 }
+function GotoPrevPage(curr){
+  for(let i=0;i<pages.length;i++)
+  {
+    if(pages[i].contains(curr))
+    {
+      pages[i].classList.add('hide');
+      pages[i-1].classList.remove('hide');
+    }
+  }
+}
+
+liveList.addEventListener('click',function(e){
+  if(e.target && e.target.matches(".liveFileUpload__file-delete")){
+    e.target.parentElement.remove();
+    if(!liveList.children.length)
+    {
+      liveList.classList.add('hide');
+    }
+  }
+});
+
 // drag and drop on drop event stopper
 window.addEventListener("dragover",function(e){
-  e = e || event;
   e.preventDefault();
 },false);
 window.addEventListener("drop",function(e){
-  e = e || event;
   e.preventDefault();
 },false);
 
+// function myhelper( target)
+// myhelper(window, ['dragover', 'drag'], handler);
+//
+// eventTarget.addEventListener(event, handler);
+// myhelper(eventTarget, [event], handler);
+
 //drag and drop on drop event handler
 function drop(){
-  dt = event.dataTransfer;
-  files = dt.files;
+  var dt = event.dataTransfer;
+  var files = dt.files;
+  liveList.classList.remove('hide');
   for (let i = 0; i < files.length; i++) {
-    let dupeNode = child[1].cloneNode(true);
-    dupeNode.querySelector('.liveFileUpload__file-name').textContent=files[i].name;
-    dupeNode.querySelector('.liveFileUpload__file-size').textContent=(files[0].size/1024).toPrecision(1)+"MBs";
-    dupeNode.querySelector('.liveFileUpload__file-type').textContent=files[i].type;
-    dupeNode.classList.remove('hide');
-    liveList.appendChild(dupeNode);
-    console.log(files);
+    var fileListTemplate = `<li class="liveFileUpload__file">
+      <img class="liveFileUpload__file-image"src="images/file-type-icon/type-pdf.svg" alt="">
+      <span class="liveFileUpload__file-name">${files[i].name}</span>
+      <span class="liveFileUpload__file-type">${files[i].type}</span>
+      <span class="liveFileUpload__file-size">${(files[0].size/1024).toPrecision(1)}MBs</span>
+      <span class="liveFileUpload__file-state">UPLOADED</span>
+      <img  class="liveFileUpload__file-delete" src="images/trashcan/trashcan.png" alt=""></li>`;
+      liveList.innerHTML+= fileListTemplate;
     }
-  addDFileDeleteAction();
 }

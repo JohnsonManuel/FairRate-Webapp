@@ -11,7 +11,7 @@
   </head>
   <body>
     <header class="page-header">
-      <div id="hamburger"class="hamburger">
+      <div id="hamburger" class="hamburger">
         <span></span>
         <span></span>
         <span></span>
@@ -91,15 +91,22 @@
                   </li>
                 </ul>
               </li>
-              <li>
-                <select form="personaldetails" class="item-selector input-field" value="This-month">
-                  <option value="none">Select an Option</option>
-                  <option value="This-month">This month</option>
-                  <option value="Next-Month">Next Month</option>
-                  <option value="December-2018">December 2018</option>
-                  <option value="January-2019">January 2019</option>
-                  <option value="I-dont-know">I don't know</option>
-                </select>
+              <li class="dropdown">
+                <span class="list_activeitem">This month</span>
+                <div class="dropdown_list-container">
+
+
+                <ul class="dropdown_list">
+                  <li class="dropdown_list__item">This month</li>
+                  <li class="dropdown_list__item">Next month</li>
+                  <li class="dropdown_list__item">December 2018</li>
+                  <li class="dropdown_list__item">January 2019</li>
+                  <li class="dropdown_list__item">I don't know</li>
+                  <li class="dropdown_list__item">Febuary 2019</li>
+                  <li class="dropdown_list__item">March 2019</li>
+                  <li class="dropdown_list__item">April 2019</li>
+                </ul>
+                </div>
               </li>
             </ul>
             <div class="box-item-wrapper">
@@ -156,32 +163,7 @@
               </div>
             </div>
             <!-- live list-->
-            <ul id="liveFileUpload" class="dragndrop__liveFileUpload">
-              <li class="liveFileUpload__file hide">
-                <img class="liveFileUpload__file-image"src="images/file-type-icon/type-pdf.svg" alt="">
-                <span class="liveFileUpload__file-name">MY ID.PDF</span>
-                <span class="liveFileUpload__file-type">PDF</span>
-                <span class="liveFileUpload__file-size">1MBs</span>
-                <span class="liveFileUpload__file-state">UPLOADED</span>
-                <img  class="liveFileUpload__file-delete" src="images/trashcan/trashcan.png" alt="">
-              </li>
-              <li class="liveFileUpload__file">
-                <img class="liveFileUpload__file-image"src="images/file-type-icon/type-pdf.svg" alt="">
-                <span class="liveFileUpload__file-name">MY ID.PDF</span>
-                <span class="liveFileUpload__file-type">PDF</span>
-                <span class="liveFileUpload__file-size">1MBs</span>
-                <span class="liveFileUpload__file-state">UPLOADED</span>
-                <img  class="liveFileUpload__file-delete" src="images/trashcan/trashcan.png" alt="">
-              </li>
-              <li class="liveFileUpload__file">
-                <img class="liveFileUpload__file-image"src="images/file-type-icon/type-image.svg" alt="">
-                <span class="liveFileUpload__file-name">IMG1231.JPG</span>
-                <span class="liveFileUpload__file-type">JPG</span>
-                <span class="liveFileUpload__file-size">1MBs</span>
-                <span class="liveFileUpload__file-state">UPLOADED</span>
-                <img  class="liveFileUpload__file-delete" src="images/trashcan/trashcan.png" alt="">
-              </li>
-            </ul>
+            <ul id="liveFileUpload " class="dragndrop__liveFileUpload hide"></ul>
           </div>
           <!-- Action buttons-->
           <div class="action-buttons">
